@@ -1,11 +1,11 @@
 
 package com.logistic.services.impl;
 
-import com.logistic.dto.UsrUsuarioDTO;
-import com.logistic.entity.UsrUsuarios;
+import com.logistic.dto.UsuarioDto;
+import com.logistic.entity.Usuarios;
 import com.logistic.exceptions.responses.BadRequestException;
 import com.logistic.repository.UsuarioRepository;
-import com.logistic.services.UsrUsuariosService;
+import com.logistic.services.UsuariosService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UsrUsuariosImlp implements UsrUsuariosService {
+public class UsuariosImpl implements UsuariosService {
 
     /**
      * repository de usuarios.
@@ -34,7 +34,7 @@ public class UsrUsuariosImlp implements UsrUsuariosService {
      * @param usuarioRepository repo usuarios
      * @param mapper model mapper
      */
-    public UsrUsuariosImlp(UsuarioRepository usuarioRepository, ModelMapper mapper) {
+    public UsuariosImpl(UsuarioRepository usuarioRepository, ModelMapper mapper) {
         this.usuarioRepository = usuarioRepository;
         this.mapper = mapper;
     }
@@ -46,12 +46,12 @@ public class UsrUsuariosImlp implements UsrUsuariosService {
      * @return objeto de tipo usuarioDTO que fue eliminado de la base de datos
      */
     @Override
-    public UsrUsuarioDTO eliminarUsuraio(Integer id) {
-        Optional<UsrUsuarios> usu = usuarioRepository.findById(id);
+    public UsuarioDto eliminarUsuraio(Integer id) {
+        Optional<Usuarios> usu = usuarioRepository.findById(id);
 
         if (usu.isPresent()) {
             usuarioRepository.deleteById(usu.get().getIdUsuario());
-            return mapper.map(usu.get(), UsrUsuarioDTO.class);
+            return mapper.map(usu.get(), UsuarioDto.class);
         }
         throw new BadRequestException("Ocurrio un error al eliminar el usuario");
     }
@@ -62,13 +62,13 @@ public class UsrUsuariosImlp implements UsrUsuariosService {
      * @return lista de usuarios almacenados en la base de datos
      */
     @Override
-    public List<UsrUsuarioDTO> listarTodos() {
-        List<UsrUsuarios> listaUsuario = usuarioRepository.findAll();
-        List<UsrUsuarioDTO> respuesta = new ArrayList<>();
+    public List<UsuarioDto> listarTodos() {
+        List<Usuarios> listaUsuario = usuarioRepository.findAll();
+        List<UsuarioDto> respuesta = new ArrayList<>();
 
         if (!listaUsuario.isEmpty()) {
-            for (UsrUsuarios usu : listaUsuario) {
-                respuesta.add(mapper.map(usu, UsrUsuarioDTO.class));
+            for (Usuarios usu : listaUsuario) {
+                respuesta.add(mapper.map(usu, UsuarioDto.class));
             }
             return respuesta;
         }

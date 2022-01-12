@@ -1,11 +1,11 @@
 package com.logistic.services;
 
 
-import com.logistic.dto.UsrUsuarioDTO;
+import com.logistic.dto.UsuarioDto;
 
 import java.util.List;
 
-public interface UsrUsuariosService {
+public interface UsuariosService {
 
     /**
      * metodo para eliminar un usuario de la base ded datos.
@@ -13,13 +13,13 @@ public interface UsrUsuariosService {
      * @param id del usuario
      * @return objeto de tipo usuarioDTO que fue eliminado de la base de datos
      */
-    UsrUsuarioDTO eliminarUsuraio(Integer id);
+    UsuarioDto eliminarUsuraio(Integer id);
 
     /**
      * metodo para listar a todos los usuarios de la base de datos.
      *
      * @return lista de usuarios almacenados en la base de datos
      */
-    List<UsrUsuarioDTO> listarTodos();
+    List<UsuarioDto> listarTodos();
 
 }

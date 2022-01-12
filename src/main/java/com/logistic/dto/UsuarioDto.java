@@ -9,11 +9,11 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class UsrUsuarioDTO {
+public class UsuarioDto {
 
     private Integer idUsuario;
     private String nombreUsuario;
-    private List<UsrRolDTO> roles;
+    private List<RolDto> roles;
     private String contrasena;
     private String nombres;
     private String apellidos;

@@ -2,20 +2,20 @@
 package com.logistic.controller;
 
 
-import com.logistic.services.UsrUsuariosService;
+import com.logistic.services.UsuariosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v.1/usuarios")
-public class UsrUsuarioController {
+public class UsuarioController {
 
     /**
      * usuarios service.
      */
     @Autowired
-    private UsrUsuariosService usrUsuariosService;
+    private UsuariosService usuariosService;
 
 
     /**
@@ -26,7 +26,7 @@ public class UsrUsuarioController {
      */
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminarUsuario(@PathVariable("id") Integer id) {
-        return ResponseEntity.ok(usrUsuariosService.eliminarUsuraio(id));
+        return ResponseEntity.ok(usuariosService.eliminarUsuraio(id));
     }
 
     /**
@@ -36,6 +36,6 @@ public class UsrUsuarioController {
      */
     @GetMapping("/")
     public ResponseEntity<?> listarTodos() {
-        return ResponseEntity.ok(usrUsuariosService.listarTodos());
+        return ResponseEntity.ok(usuariosService.listarTodos());
     }
 }

@@ -7,27 +7,33 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Entity
-@Table(name = "roles")
-public class UsrRol implements Serializable {
+@Table(name = "clientes")
+public class Clientes implements Serializable {
 
-    private static final long serialVersionUID = 1L;
     /**
-     * id del rol.
+     * id del cliente.
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "id_rol")
-    private Integer idRol;
+    @Column(name = "id_cliente")
+    private Long idCliente;
+
     /**
-     * nombre del rol.
+     * nombre del cliente.
      */
     @Column(name = "nombre")
     private String nombre;
+
+    /**
+     * Telefono del cliente.
+     */
+    @Column(name = "telefono")
+    private String telefono;
+
 
 }

@@ -14,7 +14,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UsrUsuarios implements Serializable {
+public class Usuarios implements Serializable {
 
     private static final long serialVersionUID = 1L;
     /**
@@ -59,5 +59,5 @@ public class UsrUsuarios implements Serializable {
                     referencedColumnName = "id_usuario"),
             inverseJoinColumns = @JoinColumn(name = "id_rol",
                     referencedColumnName = "id_rol"))
-    private List<UsrRol> roles;
+    private List<Rol> roles;
 }

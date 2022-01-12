@@ -1,4 +1,3 @@
-
 package com.logistic.dto;
 
 import lombok.AllArgsConstructor;
@@ -8,7 +7,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class UsrRolDTO {
-    private Integer idRol;
+public class ClientesDto {
+
+    private Long idCliente;
     private String nombre;
+    private String telefono;
+
 }
