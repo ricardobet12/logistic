@@ -28,14 +28,14 @@ constraint logistica_maritima_envio foreign key(fk_envio) references envio(id_en
 primary key(id_logistica_maritima));
 
 create table if not exists logistica_terrestre(
-id_logistica serial,
+id_logistica_terrestre serial,
 puerto_entrega int,
 numero_flota int,
 tipo_producto varchar(10),
 cantidad_producto int,
 fk_envio int,
 constraint logistica_maritima_envio foreign key(fk_envio) references envio(id_envio),
-primary key(id_logistica));
+primary key(id_logistica_terrestre));
 
 INSERT INTO public.clientes(
 	id_cliente, nombre, telefono)
