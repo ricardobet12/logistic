@@ -1,12 +1,12 @@
 package com.logistic.repository;
 
-import com.logistic.entity.UsrUsuarios;
+import com.logistic.entity.Usuarios;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UsuarioRepository extends JpaRepository<UsrUsuarios, Integer> {
+public interface UsuarioRepository extends JpaRepository<Usuarios, Integer> {
     
-    UsrUsuarios findByNombreUsuario(String nombreUsuario);
+    Usuarios findByNombreUsuario(String nombreUsuario);
 
 }
