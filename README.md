@@ -72,8 +72,8 @@ https://github.com/ricardobet12/logistic
 
 ## Autores ✒️
 
-* **Jhon Freddy salamanca** - [jhonfre1994](https://github.com/jhonfre1994)
+* **Ricardo Betancourth Bolivar** - [RicardoBet](https://github.com/ricardobet12)
 
 ## Licencia 📄
 
-Este proyecto está bajo la Licencia (MIT) - mira el archivo [LICENSE.md](https://github.com/jhonfre1994/multi-tenant-spring-boot/blob/main/LICENSE) para detalles
+Este proyecto está bajo la Licencia (MIT) - mira el archivo [LICENSE.md](https://github.com/ricardobet12/multi-tenant-spring-boot/blob/main/LICENSE) para detalles
