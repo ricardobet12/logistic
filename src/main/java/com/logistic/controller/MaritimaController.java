@@ -7,16 +7,17 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v.1/maritima")
+@RequestMapping("/maritima")
+@CrossOrigin(origins = "*")
 public class MaritimaController {
 
     @Autowired
     private MaritimaService service;
 
     /**
-     * metodo para listar todos los usuario de la base de datos.
+     * metodo para listar todos los maritima de la base de datos.
      *
-     * @return lista de usuarios guardados en la base de datos
+     * @return lista de maritima guardados en la base de datos
      */
     @GetMapping("/")
     public ResponseEntity<?> listarTodos() {
@@ -24,9 +25,9 @@ public class MaritimaController {
     }
 
     /**
-     * Servicio para obtener a un cliente por su id.
-     * @param id id del cliente
-     * @return objeto con la información del cliente
+     * Servicio para obtener a un maritima por su id.
+     * @param id id del maritima
+     * @return objeto con la información del maritima
      */
     @GetMapping("/{id}")
     public ResponseEntity<?> obtenerMaritima(@PathVariable("id") Long id) {
@@ -38,9 +39,9 @@ public class MaritimaController {
     }
 
     /**
-     * Metodo para insertar un cliente en la base de datos.
-     * @param maritima datos del cliente
-     * @return objeto con los datos del clientes ya almacenados
+     * Metodo para insertar un maritima en la base de datos.
+     * @param maritima datos del maritima
+     * @return objeto con los datos del maritima ya almacenados
      */
     @PostMapping
     public ResponseEntity<?> insertarMaritima(@RequestBody MaritimaDto maritima) {

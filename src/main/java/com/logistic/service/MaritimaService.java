@@ -16,7 +16,7 @@ public interface MaritimaService {
     /**
      * Retorna un cliente de acuerdo a un id
      * @param idMaritima -> Id de la maritima
-     * @return objeto con el cliente consultar
+     * @return objeto con la logistica maritina a consultar
      */
     MaritimaDto obtenerMaritima (Long idMaritima);
 

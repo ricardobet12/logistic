@@ -15,9 +15,9 @@ public class ClienteController {
     private ClienteService service;
 
     /**
-     * metodo para listar todos los usuario de la base de datos.
+     * metodo para listar todos los clientes de la base de datos.
      *
-     * @return lista de usuarios guardados en la base de datos
+     * @return lista de clientes guardados en la base de datos
      */
     @GetMapping("/")
     public ResponseEntity<?> listarTodos() {
@@ -51,6 +51,7 @@ public class ClienteController {
         }
         return ResponseEntity.ok(cliente);
     }
+
 
     @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<?> deleteUser(@PathVariable("id") Long id){
