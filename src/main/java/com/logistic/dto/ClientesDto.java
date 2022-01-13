@@ -11,6 +11,8 @@ public class ClientesDto {
 
     private Long idCliente;
     private String nombre;
+    private String apellido;
     private String telefono;
+    private String correo;
 
 }

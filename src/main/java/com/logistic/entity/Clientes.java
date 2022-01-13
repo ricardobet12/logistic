@@ -30,10 +30,22 @@ public class Clientes implements Serializable {
     private String nombre;
 
     /**
+     * Apellido del cliente.
+     */
+    @Column(name = "apellido")
+    private String apellido;
+
+    /**
      * Telefono del cliente.
      */
     @Column(name = "telefono")
     private String telefono;
+
+    /**
+     * Correo del cliente.
+     */
+    @Column(name = "correo")
+    private String correo;
 
 
 }

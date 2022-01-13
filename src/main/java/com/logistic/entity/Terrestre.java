@@ -32,7 +32,7 @@ public class Terrestre implements Serializable {
     @Column(name = "cantidad_producto")
     private Integer cantidadProducto;
 
-    //@ManyToOne
-    @Column(name = "fk_envio")
+    @ManyToOne
+    @JoinColumn(name = "fk_envio")
     private Envio fkEnvio;
 }
