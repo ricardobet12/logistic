@@ -26,8 +26,8 @@ public class Maritima {
     @Column(name = "placa_vehiculo")
     private String placaVehiculo;
 
-    //@ManyToOne
-    @Column(name = "fk_envio")
+    @ManyToOne
+    @JoinColumn(name = "fk_envio")
     private Envio fkEnvio;
 
     @Column(name = "tipo_producto")

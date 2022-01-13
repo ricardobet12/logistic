@@ -1,13 +1,14 @@
 package com.logistic.controller;
 
 import com.logistic.dto.ClientesDto;
-import com.logistic.services.ClienteService;
+import com.logistic.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v.1/clientes")
+@RequestMapping("/clientes")
+@CrossOrigin(origins = "*")
 public class ClienteController {
 
     @Autowired
@@ -50,4 +51,27 @@ public class ClienteController {
         }
         return ResponseEntity.ok(cliente);
     }
+
+    @DeleteMapping("/eliminar/{id}")
+    public ResponseEntity<?> deleteUser(@PathVariable("id") Long id){
+        boolean usuario = service.eliminarUsuario(id);
+        if(usuario == true){
+            return ResponseEntity.ok(usuario);
+        }
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<?> updateUsuario(@PathVariable("id") Long id, @RequestBody ClientesDto u){
+        ClientesDto p = service.getCliente(id);
+        if(p == null){
+            return ResponseEntity.noContent().build();
+        }
+        p = service.guardarCliente(u);
+        if(p == null){
+            return ResponseEntity.badRequest().build();
+        }
+        return ResponseEntity.ok(p);
+    }
+
 }

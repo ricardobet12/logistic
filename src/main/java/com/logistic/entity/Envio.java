@@ -33,8 +33,8 @@ public class Envio implements Serializable {
     @Column(name = "descuento")
     private Double descuento;
 
-    //@ManyToOne
-    @Column(name = "fk_cliente")
+    @ManyToOne
+    @JoinColumn(name = "fk_cliente")
     private Clientes fkCliente;
 
     @Column(name = "numero_guia")
