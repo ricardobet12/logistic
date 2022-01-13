@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class TerrestreDto {
     private Long idLogisticaTerrestre;
     private Integer puertoEntrega;
-    private Integer numeroFlota;
+    private String numeroFlota;
     private String tipoProducto;
     private Integer cantidadProducto;
     private EnvioDto fkEnvio;

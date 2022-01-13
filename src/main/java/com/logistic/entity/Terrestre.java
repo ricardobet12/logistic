@@ -24,7 +24,7 @@ public class Terrestre implements Serializable {
     private Integer puertoEntrega;
 
     @Column(name = "numero_flota")
-    private Integer numeroFlota;
+    private String numeroFlota;
 
     @Column(name = "tipo_producto")
     private String tipoProducto;
