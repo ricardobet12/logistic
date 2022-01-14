@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 
 /**
  * MUY IMPORTANTE: ESTA CLASE SÓLO SE EJECUTARÁ UNA VEZ PARA CREAR LOS ROLES.
@@ -23,9 +25,13 @@ public class CreateRoles implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
          Rol rolAdmin = new Rol(RolNombre.ROLE_ADMIN);
+         rolAdmin.setId(1);
         Rol rolUser = new Rol(RolNombre.ROLE_USER);
-        rolService.save(rolAdmin);
-        rolService.save(rolUser);
-
+        rolUser.setId(2);
+        Optional<Rol> rolOptional = rolService.getByRolNombre(RolNombre.ROLE_ADMIN);
+        if (!rolOptional.isPresent()){
+            rolService.save(rolAdmin);
+            rolService.save(rolUser);
+        }
     }
 }

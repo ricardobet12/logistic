@@ -26,4 +26,6 @@ public interface TerrestreService {
      * @return lista de las terrestre.
      */
     List<TerrestreDto> obtenerTodos();
+
+    boolean eliminar(Long id);
 }

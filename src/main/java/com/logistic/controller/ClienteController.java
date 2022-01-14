@@ -30,7 +30,7 @@ public class ClienteController {
      * @return objeto con la información del cliente
      */
     @GetMapping("/{id}")
-    public ResponseEntity<?> obtenerCliente(@PathVariable("id") Long id) {
+    public ResponseEntity<?> obtener(@PathVariable("id") Long id) {
         ClientesDto cliente = service.getCliente(id);
         if (cliente == null) {
             return ResponseEntity.notFound().build();
@@ -44,7 +44,7 @@ public class ClienteController {
      * @return objeto con los datos del clientes ya almacenados
      */
     @PostMapping
-    public ResponseEntity<?> insertarCliente(@RequestBody ClientesDto cliente) {
+    public ResponseEntity<?> insertar(@RequestBody ClientesDto cliente) {
         cliente = service.guardarCliente(cliente);
         if (cliente == null) {
             return ResponseEntity.badRequest().build();
@@ -54,7 +54,7 @@ public class ClienteController {
 
 
     @DeleteMapping("/eliminar/{id}")
-    public ResponseEntity<?> deleteUser(@PathVariable("id") Long id){
+    public ResponseEntity<?> delete(@PathVariable("id") Long id){
         boolean usuario = service.eliminarUsuario(id);
         if(usuario == true){
             return ResponseEntity.ok(usuario);
@@ -63,7 +63,7 @@ public class ClienteController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateUsuario(@PathVariable("id") Long id, @RequestBody ClientesDto u){
+    public ResponseEntity<?> update(@PathVariable("id") Long id, @RequestBody ClientesDto u){
         ClientesDto p = service.getCliente(id);
         if(p == null){
             return ResponseEntity.noContent().build();

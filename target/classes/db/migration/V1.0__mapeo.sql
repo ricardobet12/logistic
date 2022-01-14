@@ -14,7 +14,7 @@ fecha_entrada date,
 precio_envio decimal(3,0),
 descuento double precision,
 fk_cliente int,
-numero_guia int,
+numero_guia varchar(10),
 bodega int,
 constraint producto_cliente foreign key(fk_cliente) references clientes(id_cliente),
 primary key(id_envio));

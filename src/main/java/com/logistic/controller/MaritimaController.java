@@ -51,4 +51,26 @@ public class MaritimaController {
         }
         return ResponseEntity.ok(maritima);
     }
+
+    @DeleteMapping("/eliminar/{id}")
+    public ResponseEntity<?> delete(@PathVariable("id") Long id){
+        boolean usuario = service.eliminar(id);
+        if(usuario == true){
+            return ResponseEntity.ok(usuario);
+        }
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<?> update(@PathVariable("id") Long id, @RequestBody MaritimaDto u){
+        MaritimaDto p = service.obtenerMaritima(id);
+        if(p == null){
+            return ResponseEntity.noContent().build();
+        }
+        p = service.guardarMaritima(u);
+        if(p == null){
+            return ResponseEntity.badRequest().build();
+        }
+        return ResponseEntity.ok(p);
+    }
 }

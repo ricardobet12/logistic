@@ -25,4 +25,6 @@ public interface MaritimaService {
      * @return lista de las maritimas.
      */
     List<MaritimaDto> obtenerTodos();
+
+    boolean eliminar(Long id);
 }

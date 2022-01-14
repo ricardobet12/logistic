@@ -17,6 +17,6 @@ public class EnvioDto {
     private Double precioEnvio;
     private Double descuento;
     private ClientesDto fkCliente;
-    private Integer numeroGuia;
+    private String numeroGuia;
     private Integer bodega;
 }

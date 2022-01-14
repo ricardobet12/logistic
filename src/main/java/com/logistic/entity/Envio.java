@@ -38,7 +38,7 @@ public class Envio implements Serializable {
     private Clientes fkCliente;
 
     @Column(name = "numero_guia")
-    private Integer numeroGuia;
+    private String numeroGuia;
 
     @Column(name = "bodega")
     private Integer bodega;
